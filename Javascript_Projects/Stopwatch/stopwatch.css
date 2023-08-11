@@ -1,0 +1,36 @@
+@import url('https://fonts.google.com/specimen/Anton/tester');
+
+body{
+    background-color: lightblue;
+    font-family: 'Anton';
+    height: 100%;
+    text-align: center;
+}
+
+h1,h2{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 100;
+    font-size: 260%;
+    color: grey;
+}
+
+#seconds, #tens{
+    font-size: 200%;
+    
+}
+
+button{
+    background: rgb(196, 168, 97);
+    color: white;
+    border: solid 1px black;
+    cursor: pointer;
+    font-size: 120%;
+    padding: 15px 10px;
+    width: 200px;
+    margin: 10px;
+    
+}
+button:hover{
+    background: rgb(228, 82, 228);
+    border: solid 1px black;
+}
