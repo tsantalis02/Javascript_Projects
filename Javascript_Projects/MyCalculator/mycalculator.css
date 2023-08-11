@@ -69,7 +69,7 @@ body {
   .operators div:active {
     font-weight: bold;
   }
-  
+
   .leftPanel {
     display: inline-block;
   }
@@ -104,7 +104,7 @@ body {
     border-radius: 1px;
     width: 17%;
     text-align: center;
-    padding: 127px 10px;
+    padding: 123px 10px;
     margin: 10px 6px 10px 0;
     vertical-align: top;
     cursor: pointer;

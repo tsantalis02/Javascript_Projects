@@ -41,7 +41,7 @@ for (var i = 0; i < operator.length; i++) {
     var lastChar = currentString[currentString.length - 1];
 
     // if last character entered is an operator, replace it with the currently pressed one
-    if (lastChar === "+" || lastChar === "-" || lastChar === "×" || lastChar === "÷") {
+    if (lastChar === "+" || lastChar === "-" || lastChar === "×" || lastChar === "÷" || lastChar === "%" || lastChar === "R" || lastChar === "M") {
       var newString = currentString.substring(0, currentString.length - 1) + e.target.innerHTML;
       input.innerHTML = newString;
     } else if (currentString.length == 0) {
@@ -62,7 +62,7 @@ result.addEventListener("click", function() {
   var inputString = input.innerHTML;
 
   // forming an array of numbers. eg for above string it will be: numbers = ["10", "26", "33", "56", "34", "23"]
-  var numbers = inputString.split(/\+|\-|\×|\÷/g);
+  var numbers = inputString.split(/\+|\-|\×|\÷|\%|\R|\M/g);
 
   // forming an array of operators. for above string it will be: operators = ["+", "+", "-", "*", "/"]
   // first we replace all the numbers and dot with empty string and then split
@@ -106,6 +106,14 @@ result.addEventListener("click", function() {
     operators.splice(add, 1);
     add = operators.indexOf("+");
   }
+
+  var percent = operators.indexOf("%");
+  while (percent != -1) {
+    numbers.splice(percent, 2,numbers[percent] / 100);
+    operators.splice(percent, 1);
+    percent = operators.indexOf("%");
+  }
+
 
   input.innerHTML = numbers[0]; // displaying the output
 
